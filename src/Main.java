@@ -12,10 +12,11 @@ public class Main {
             int choice = scanner.nextInt();
             switch (choice){
                 case 1:
-                    System.out.println("Enter id: ");
-                    int id = scanner.nextInt();
                     System.out.println("Enter name: ");
                     String name = scanner.nextLine();
+//                    scanner.nextLine();
+                    System.out.println("Enter id: ");
+                    int id = scanner.nextInt();
                     System.out.println("Enter age: ");
                     int age = scanner.nextInt();
                     System.out.println("Enter score: ");
@@ -23,15 +24,17 @@ public class Main {
                     System.out.println("Enter grade: ");
                     int grade = scanner.nextInt();
                     Student student = new Student(id, name, age, score, grade);
-                    studentManager.students.add(student);
+                    studentManager.addStudent(student);
                     System.out.println("Added successfully!");
                     break;
                 case 2:
                     studentManager.showAllStudents();
                     break;
                 case 3:
-
-
+                    System.out.println("Enter ID: ");
+                    int studentId = scanner.nextInt();
+                    studentManager.searchStudentById(studentId);
+                    break;
 
 
             }
