@@ -5,16 +5,17 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         StudentManager studentManager = new StudentManager();
         while (true){
+            System.out.println();
             System.out.println("1 - Add student");
             System.out.println("2 - showAllStudent");
             System.out.println("3 - searchStudentById");
             System.out.println("Enter command: ");
             int choice = scanner.nextInt();
+            scanner.nextLine();
             switch (choice){
                 case 1:
                     System.out.println("Enter name: ");
                     String name = scanner.nextLine();
-//                    scanner.nextLine();
                     System.out.println("Enter id: ");
                     int id = scanner.nextInt();
                     System.out.println("Enter age: ");

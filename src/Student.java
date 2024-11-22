@@ -54,6 +54,7 @@ public class Student {
         return grade;
     }
     public void showStudentInfo(){
+//        System.out.println(name);
         System.out.printf("ID: %s\nName: %s\nAge: %s\nScore: %s\nGrade: %s", id, name, age, score, grade);
     }
 }
