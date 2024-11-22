@@ -4,11 +4,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         StudentManager studentManager = new StudentManager();
-        while (true){
+        boolean exit = false;
+        while (!exit){
             System.out.println();
             System.out.println("1 - Add student");
             System.out.println("2 - showAllStudent");
             System.out.println("3 - searchStudentById");
+            System.out.println("4 - removeStudentById");
+            System.out.println("5 - exit");
             System.out.println("Enter command: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
@@ -24,7 +27,10 @@ public class Main {
                     double score = scanner.nextDouble();
                     System.out.println("Enter grade: ");
                     int grade = scanner.nextInt();
-                    Student student = new Student(id, name, age, score, grade);
+                    scanner.nextLine();
+                    System.out.println("Enter address:");
+                    String address = scanner.nextLine();
+                    Student student = new Student(id, name, age, score, grade, address);
                     studentManager.addStudent(student);
                     System.out.println("Added successfully!");
                     break;
@@ -33,11 +39,18 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("Enter ID: ");
-                    int studentId = scanner.nextInt();
-                    studentManager.searchStudentById(studentId);
+                    int searchId = scanner.nextInt();
+                    studentManager.searchStudentById(searchId);
                     break;
-
-
+                case 4:
+                    System.out.println("Enter ID: ");
+                    int removeId = scanner.nextInt();
+                    studentManager.removeStudentById(removeId);
+                    break;
+                case 5:
+                    exit = true;
+                    System.out.println("Exited program!");
+                    break;
             }
         }
 

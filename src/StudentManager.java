@@ -1,11 +1,10 @@
 import java.util.*;
 
 public class StudentManager {
-
     ArrayList<Student> students = new ArrayList<>();
-
     public void addStudent(Student student){
         students.add(student);
+
     }
     public void showAllStudents(){
         if (students.isEmpty()){
@@ -14,6 +13,7 @@ public class StudentManager {
             System.out.println("Student list: ");
             for (Student student: students){
                 student.showStudentInfo();
+                System.out.println("\n******************************");
             }
         }
     }
@@ -31,5 +31,20 @@ public class StudentManager {
             System.out.println("The student with this "+id+" doesn't exist");
         }
 
+    }
+    public void removeStudentById(int id){
+        boolean found = false;
+        for (Student student: students){
+            if (student.getId() == id){
+                students.remove(student);
+                System.out.println("Student with this id: "+id+" was removed!");
+                found = true;
+                break;
+
+            }
+        }
+        if (!found){
+            System.out.println("Student with this id: "+id+" was not found!");
+        }
     }
 }

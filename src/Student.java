@@ -2,17 +2,6 @@ public class Student {
     private int id;
     private String name;
     private int age;
-    private double score;
-    private int grade;
-
-
-    public Student(int id, String name, int age, double score, int grade){
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.grade = grade;
-        this.score = score;
-    }
 
     public int getId() {
         return id;
@@ -22,39 +11,62 @@ public class Student {
         this.id = id;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public int getAge() {
-        return age;
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getName() {
-        return name;
+    public int getAge() {
+        return age;
     }
 
-    public void setScore(double score) {
-        this.score = score;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public double getScore() {
         return score;
     }
 
-    public void setGrade(int grade) {
-        this.grade = grade;
+    public void setScore(double score) {
+        this.score = score;
     }
 
     public int getGrade() {
         return grade;
     }
+
+    public void setGrade(int grade) {
+        this.grade = grade;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Student(int id, String name, int age, double score, int grade, String address) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.score = score;
+        this.grade = grade;
+        this.address = address;
+    }
+
+    private double score;
+    private int grade;
+    private String address;
+
+
+
     public void showStudentInfo(){
-//        System.out.println(name);
-        System.out.printf("ID: %s\nName: %s\nAge: %s\nScore: %s\nGrade: %s", id, name, age, score, grade);
+        System.out.printf("ID: %s\nName: %s\nAge: %s\nScore: %s\nGrade: %s\nAddress: %s", id, name, age, score, grade, address);
     }
 }
